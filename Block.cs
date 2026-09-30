@@ -182,7 +182,6 @@ namespace XQWERTYATimeParserC_ {
             }
 
             // split by spaces and run for each 
-            blocksStrSplitFinal.ForEach(obj => Console.WriteLine(obj));
             blocks = new();
             foreach ((string blockStr, Oper operation, int operIndex) in blocksStrSplitFinal) {
                 // check side of arrow (by adjusting position) based on operation
