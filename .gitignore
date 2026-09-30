@@ -1,0 +1,9 @@
+# visual studio
+.vs/
+
+# build
+bin/
+obj/
+
+# settings
+Properties/

@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+	<LangVersion>preview</LangVersion>
+    <RootNamespace>XQWERTYATimeParserC_</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+	<PropertyGroup>
+		<AlwaysRunTargets>MoveInput</AlwaysRunTargets>
+		<DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
+	</PropertyGroup>
+
+	<!-- move files action -->
+	<Target Name="MoveInput" AfterTargets="build" Condition="'$(Configuration)' == 'Debug'">
+		<Message Text="moving `input.txt` file" Importance="high" />
+		<ItemGroup>
+			<FilesToCopy Include="Input.txt"/>
+		</ItemGroup>
+		<Copy SourceFiles="@(FilesToCopy)" DestinationFiles="@(FilesToCopy->'$(TargetDir)\Input.txt')" SkipUnchangedFiles="true" />
+	</Target>
+
+</Project>
